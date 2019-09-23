@@ -17,11 +17,11 @@ export class AppComponent {
 
   newUserAdded: boolean = false;
 
-  users: Array<string> = [];
+  users: Array<object> = [];
 
-  // executed when Add Mountain is clicked
+  // executed when Add User is clicked
   onAddUser(): void {
-    this.users.push(`${this.firstName}, ${this.lastName} ${this.email}`);
+    this.users.push({"firstName": this.firstName, "lastName": this.lastName, "email": this.email});
     this.newUserAdded = true;
   }
 
@@ -30,7 +30,7 @@ export class AppComponent {
     this.firstName = '';
     this.lastName = '';
     this.email = '';
-
+    //this.newUserAdded = false;
   }
 
 
