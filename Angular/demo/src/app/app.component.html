@@ -18,19 +18,27 @@
         [(ngModel)]="mountainDescription" />
     </div>
     <!-- Property Binding: [ ] -->
-    <button type="button" class="btn btn-primary" [disabled]="addNewMountains">Add Mountain</button>
+    <button type="button" class="btn btn-primary" [disabled]="addNewMountains" (click)="onAddMountain()">Add Mountain</button>
+        <!-- Event Binding: ( ) -->
+        &nbsp;<button type="button" class="btn btn-default" (click)="onReset()">Clear</button>
   </div>
-  <div class="container" id="mountainsDiv">
+  <!-- Built-in structural (changes structure of DOM) *ngIf Directive: conditional expression returns true/false -->
+  <div class="container" id="mountainsDiv" *ngIf="newMountainAdded; else noMountains">
     <hr />
     <h3>Mountains</h3>
     <!--
         String Interpolation: Whatever is evaluated in the TypeScript expression inside the String Interpolation braces {{ }} resolves to a String.
         {{ TypeScript_Expression }}  => result is a String
       -->
-    {{ 'Mountain:' }} {{mountainName}} - {{mountainElevation}}'
-    <br />{{mountainDescription}}
+      {{newMountain}}
   </div>
-
+  <!-- Create ng-template with local reference #  to conditinally display -->
+  <ng-template #noMountains>
+    <div class="container">
+        <hr />
+        <h3>No Mountains Added.</h3>
+    </div>
+  </ng-template>
   <div class="container">
     <hr />
     <!-- Even though currentYear is defined as type number in app.component.ts, it resolves to a string -->

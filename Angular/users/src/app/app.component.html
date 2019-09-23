@@ -17,7 +17,9 @@
       <input type="text" class="form-control" id="email" placeholder="Enter an Email" [(ngModel)]="email" />
     </div>
     <!-- Property Binding: [ ] -->
-    <button type="button" class="btn btn-primary" [disabled]="addNewUser">Add User</button>
+    <button type="button" class="btn btn-primary" [disabled]="addNewUsers" (click)="onAddUser()">Add User</button>
+    <!-- Event Binding: ( ) -->
+    &nbsp;<button type="button" class="btn btn-default" (click)="onReset()">Clear</button>
   </div>
   <div class="container" id="usersDiv">
     <hr />
@@ -26,8 +28,7 @@
         String Interpolation: Whatever is evaluated in the TypeScript expression inside the String Interpolation braces {{ }} resolves to a String.
         {{ TypeScript_Expression }}  => result is a String
       -->
-    {{firstName}} {{lastName}}
-    <br />{{email}}
+      {{newUser}}
   </div>
 
   <div class="container">

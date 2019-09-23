@@ -12,12 +12,33 @@ export class AppComponent {
   mountainName: string = 'Mt. Washington';
   mountainElevation: string = '6288';
   mountainDescription: string = 'Mt. Washington (6,288 feet) is the highest peak east of the Mississippi River and north of the Carolinas. The upper part of the mountain has a climate similar to that of northern Labrador and supports a variety of alpine flora and fauna.';
+  newMountain: string = '';
   currentYear: number = 2019;
 
   addNewMountains: boolean = false;
+  newMountainAdded: boolean = false;
+
+
+  // executed when the Reset button is clicked
+  onReset(): void {
+    this.mountainName = '';
+    this.mountainElevation = '';
+    this.mountainDescription = '';
+    this.addNewMountains = false;
+    this.newMountainAdded = false;
+  }
+  
 
   // declare a method
   getCurrentYear(): number {
     return this.currentYear;
+  }
+
+
+  // executed when Add Mountain is clicked
+  onAddMountain(): void {
+    this.newMountain = `${this.mountainName} - ${this.mountainElevation}': ${this.mountainDescription}`;
+    this.addNewMountains = true;
+    this.newMountainAdded = true;
   }
 }
