@@ -23,22 +23,20 @@
         &nbsp;<button type="button" class="btn btn-default" (click)="onReset()">Clear</button>
   </div>
   <!-- Built-in structural (changes structure of DOM) *ngIf Directive: conditional expression returns true/false -->
-  <div class="container" id="mountainsDiv" *ngIf="newMountainAdded; else noMountains">
+  <div class="container" id="mountainsDiv">
     <hr />
-    <h3>Mountains</h3>
-    <!--
+    <!-- Built-in ngStyle attribute directive: uses Property Binding [ ] to bind to a property of the directive -->
+    <h3 [ngStyle]="{color: getColor()}">Mountains</h3>
+    <div *ngIf="newMountainAdded; else noMountains">
+      <!--
         String Interpolation: Whatever is evaluated in the TypeScript expression inside the String Interpolation braces {{ }} resolves to a String.
-        {{ TypeScript_Expression }}  => result is a String
+        {{ TypeScript_Expression }} => result is a String
       -->
       {{newMountain}}
-  </div>
-  <!-- Create ng-template with local reference #  to conditinally display -->
-  <ng-template #noMountains>
-    <div class="container">
-        <hr />
-        <h3>No Mountains Added.</h3>
     </div>
-  </ng-template>
+    <!-- Create ng-template with local reference (#) to conditinally display -->
+    <ng-template #noMountains>No Mountains Added.</ng-template>
+</div>
   <div class="container">
     <hr />
     <!-- Even though currentYear is defined as type number in app.component.ts, it resolves to a string -->

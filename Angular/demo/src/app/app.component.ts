@@ -34,6 +34,10 @@ export class AppComponent {
     return this.currentYear;
   }
 
+  getColor(): string {
+    return this.newMountainAdded === true ? '#000080' : '#FF0000'; // navy : red
+  }
+
 
   // executed when Add Mountain is clicked
   onAddMountain(): void {

@@ -15,7 +15,8 @@ export class AppComponent {
   newUser: string = '';
   currentYear: number = 2019;
 
-  addNewUsers: boolean = true;
+  addNewUsers: boolean = false;
+  newUserAdded: boolean = false;
 
   // executed when the Reset button is clicked
   onReset(): void {
@@ -23,6 +24,7 @@ export class AppComponent {
     this.lastName = '';
     this.email = '';
     this.addNewUsers = false;
+    this.newUserAdded = false;
   }
 
 
@@ -31,10 +33,14 @@ export class AppComponent {
     return this.currentYear;
   }
 
+  getColor(): string {
+    return this.newUserAdded === true ? '#000080' : '#FF0000'; // navy : red
+  }
 
   // executed when Add Mountain is clicked
   onAddUser(): void {
     this.newUser = `${this.firstName} - ${this.lastName}': ${this.email}`;
     this.addNewUsers = true;
+    this.newUserAdded = true;
   }
 }
