@@ -29,7 +29,20 @@
         String Interpolation: Whatever is evaluated in the TypeScript expression inside the String Interpolation braces {{ }} resolves to a String.
         {{ TypeScript_Expression }}  => result is a String
       -->
-      {{newUser}}
+    <table class="table table-striped">
+      <thead>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Email</td>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{firstName}}</td> 
+          <td>{{lastName}}</td> 
+          <td>{{email}}</td> 
+        </tr>
+      </tbody>
+    </table>
   </div>
     <!-- Create ng-template with local reference (#) to conditinally display -->
     <ng-template #noUsers>No users Added.</ng-template>
