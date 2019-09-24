@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from './user.model';
+import { UserService } from '../providers/user.service';
 
 
 @Component({
@@ -23,13 +23,14 @@ export class UserComponent implements OnInit {
   newUserAdded: boolean = false;
 
   // Array to hold Mountain Objects
-  users: User[] = [];
-  constructor() { console.log(this.users) }
+  users: any[] = [];
+  constructor(private userService: UserService) {}
 
   // executed when Add User is clicked
   onAddUser(): void {
-    this.users.push(new User(this.firstName, this.lastName, this.email));
+    this.users = this.userService.addUser(this.firstName, this.lastName, this.email);
     this.newUserAdded = true;
+    
   }
 
   // executed when the Reset button is clicked
@@ -49,8 +50,6 @@ export class UserComponent implements OnInit {
   getColor(): string {
     return this.newUserAdded === true ? '#000080' : '#FF0000'; // navy : red
   }
-
-
 
 
 
