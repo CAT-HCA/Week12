@@ -8,6 +8,12 @@ import { HeaderComponent } from './header/header.component';
 import { UserComponent } from './user/user.component';
 import { UserService } from './providers/user.service';
 
+import { Routes, RouterModule }  from '@angular/router';
+
+const appRoutes: Routes = [
+  {path: '', component: UserComponent},
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +23,8 @@ import { UserService } from './providers/user.service';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     UserService
