@@ -25,3 +25,21 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+## Good Examples of:
+
+### HTML
+- [(ngModel)] - assigning 2-way data binding in html (changing data in form field would reflect in dynamic html data
+
+- [ngStyle] - angular styling directive to adjust css based on conditionals
+
+- *ngFor="let mountain of mountains"
+  -Angular For loop looping through array of mountains to display each mountain object in its own para
+
+### TS/JS
+- methods to "push" variable values to the string interpolation in html
+
+- clearing fields and disabling/enabling buttons (event binding)
+
+- method for styling with ternary conditional
