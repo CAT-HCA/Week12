@@ -1,4 +1,4 @@
-// Create Mountain Model Class
+// Create User Model Class
 export class User {
     // properties
     public firstName: string = '';

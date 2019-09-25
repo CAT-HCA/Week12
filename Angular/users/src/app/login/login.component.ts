@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
     // call login() method in AuthService to validate login creds
     if (this.authService.login(this.userName, this.password)) {
       this.loginError = false;
-      // load mountains "page"
+      // load users "page"
       this.router.navigate(['users'], { queryParams: { username: this.userName } });
     } else {
       this.loginError = true;

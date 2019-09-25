@@ -23,7 +23,7 @@ export class UserComponent implements OnInit {
 
   newUserAdded: boolean = false;
 
-  // Array to hold Mountain Objects
+  // Array to hold User Objects
   users: any[] = [];
   constructor(private userService: UserService, private router: Router) { }
 
