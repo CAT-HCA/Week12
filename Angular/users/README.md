@@ -41,3 +41,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ### JS/TS
 - push method
 - array of objects
+- models/data models (defining default values and constructor function)
+- creating services to handle data (ex. authorizing login)
+- adding routers to inject page views (creating/importing - only single view example)
+
