@@ -7,11 +7,14 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { UserComponent } from './user/user.component';
 import { UserService } from './providers/user.service';
+import { LoginComponent } from './login/login.component';
 
 import { Routes, RouterModule }  from '@angular/router';
 
+
 const appRoutes: Routes = [
-  {path: '', component: UserComponent},
+  {path: '', component: LoginComponent},
+  {path: 'users', component: UserComponent}
 ];
 
 @NgModule({
@@ -19,7 +22,8 @@ const appRoutes: Routes = [
     AppComponent,
     FooterComponent,
     HeaderComponent,
-    UserComponent
+    UserComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

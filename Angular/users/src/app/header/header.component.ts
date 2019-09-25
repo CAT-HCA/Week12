@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent {
 
 
-    title: string = 'TESTING';
+    title: string = 'USERS';
 
 
 }

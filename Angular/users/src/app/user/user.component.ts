@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../providers/user.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -24,13 +25,13 @@ export class UserComponent implements OnInit {
 
   // Array to hold Mountain Objects
   users: any[] = [];
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, private router: Router) { }
 
   // executed when Add User is clicked
   onAddUser(): void {
     this.users = this.userService.addUser(this.firstName, this.lastName, this.email);
     this.newUserAdded = true;
-    
+
   }
 
   // executed when the Reset button is clicked
@@ -40,6 +41,12 @@ export class UserComponent implements OnInit {
     this.email = '';
     //this.newUserAdded = false;
   }
+  // executed when the Reset button is clicked
+  onLogout(): void {
+    this.router.navigate(['/']);
+  }
+
+
 
 
   // declare a method
